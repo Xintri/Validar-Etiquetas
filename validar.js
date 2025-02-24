@@ -1,15 +1,16 @@
 function validar(form) {
-    // Expresión regular para detectar < o >
-    var regexEtiquetas = /[<>]/;
-
+    
     // Validar nombre
     var nombre = form.nombre.value.trim();
+    var regexEtiquetas = /[<>]/;
+    
     if (nombre === "") {
         alert("Por favor, ingrese su nombre.");
         return false;
     }
+    
     if (regexEtiquetas.test(nombre)) {
-        alert("No se permiten los caracteres '<' o '>'.");
+        alert("No se permiten los caracteres '<' o '>' en el nombre.");
         return false;
     }
 
@@ -33,7 +34,6 @@ function validar(form) {
         alert("Por favor, seleccione un deporte favorito.");
         return false;
     }
-
     // Si todo es válido
     return true;
 }
